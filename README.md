@@ -4,6 +4,8 @@ Simple but effective Python benchmark. Consisting of four different benchmarks: 
 ## Usage
 
 ```
+git clone https://github.com/vprelovac/python-speed.git
+cd python-speed
 python3 bench.py
 ```
 
