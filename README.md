@@ -1,11 +1,13 @@
 # python-bench
-Simple but effective Python benchmark. Use it to measure speed of various Python versions, or to measure speed of various hosting providers.
+Simple but effective Python benchmark. Used four benchmarks: string/memory, pi calc/math, regex and fibonacci(stack) to measure performance. You can use it to measure speed of various Python versions, or to measure speed of various hosting providers.
 
 ## Usage
 
 ```
 python bench.py
 ```
+
+Lower values are better.
 
 ## Examples
 
@@ -42,3 +44,40 @@ fibonnaci generate:  132.45823606848717
 total:  11252.856145147234
 
 ```
+
+Use it to measure performance of different hosting providers.
+
+DigitalOcean $6/mo AMD
+```
+python3 bench.py 
+string: 5200.982441000178
+pi calc: 2586.3461019998795
+regex: 2393.028546000096
+fibonnaci generate:  2007.9667189997963
+
+total:  12188.32380799995
+```
+
+DigitalOcean $6/mo Intel
+```
+python3 bench.py 
+string: 11556.846907000363
+pi calc: 2780.3279120003026
+regex: 2951.313669999763
+fibonnaci generate:  2506.3611700002184
+
+total:  19794.849659000647
+```
+
+DigitalOcean $5/mo
+```
+python3 bench.py 
+string: 13145.982636000099
+pi calc: 3260.851814000034
+regex: 3409.4889729999522
+fibonnaci generate:  2955.1533290000407
+
+total:  22771.476752000126
+```
+
+Go with $6/mo AMD :)
