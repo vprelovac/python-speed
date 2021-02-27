@@ -80,4 +80,27 @@ fibonnaci generate:  2955.1533290000407
 total:  22771.476752000126
 ```
 
-Go with $6/mo AMD :)
+
+Linode $5/mo
+```
+python3 bench.py 
+string: 3441.8879259999926
+pi calc: 3530.859902000003
+regex: 4446.7015299999985
+fibonnaci generate:  4629.420477000011
+
+total:  16048.869835000005
+```
+
+UpCloud $5/mo
+```
+python3 bench.py 
+string: 1495.373236000006
+pi calc: 2604.472407000003
+regex: 2679.8153320000038
+fibonnaci generate:  2099.722478000018
+
+total:  8879.383453000031
+```
+
+Go with $5/mo UpCloud or $6/mo AMD DigitalOcean :)
