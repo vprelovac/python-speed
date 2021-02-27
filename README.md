@@ -4,7 +4,7 @@ Simple but effective Python benchmark. Consisting of four different benchmarks: 
 ## Usage
 
 ```
-python bench.py
+python3 bench.py
 ```
 
 Lower values are better.
@@ -12,7 +12,7 @@ Lower values are better.
 ## Example: hosting showdown
 
 
-Using python-speed to benchmark different hosting providers. All instances running Ubuntu 20.04 LTS. 
+Using python-speed to benchmark different hosting providers. All instances running Ubuntu 20.04 LTS and python 3.8 was default. 
 
 DigitalOcean $6/mo AMD
 ```
