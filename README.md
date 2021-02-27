@@ -11,7 +11,9 @@ Lower values are better.
 
 ## Examples
 
-Use python-bench to measure that Python 3.8 is about 10% faster than 3.7. pypy is immensely faster working with stack but has slower string performance than vanilla Python.
+Use python-speed to measure Python 3.8 vs Python 3.7 vs pypy performance.
+
+Python 3.8 is about 10% faster than 3.7. pypy is immensely faster working with stack but has slower string performance than vanilla Python.
 
 ```
 python3.7 bench.py 
