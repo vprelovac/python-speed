@@ -70,7 +70,6 @@ fibonnaci generate:  2099.722478000018
 total:  8879.383453000031
 ```
 
-Go with $5/mo UpCloud or $6/mo AMD DigitalOcean :)
 
 ## Example: Measure different python versions
 
