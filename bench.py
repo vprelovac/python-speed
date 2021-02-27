@@ -119,15 +119,15 @@ def reverse_5(s):
         
 def strb(data):
      for i in range(0, 130):
-         data=data.lower()
-         data=data.replace("is", "was")
-         temp=reverse_1(data[1000:22250])
+         temp=data.lower()
+         temp=temp.replace("is", "was")
+         temp=reverse_1(data[1000:14250])
          temp=reverse_5(temp)
 
          temp='|'.join(data.split(' '))
          
 
-
+print("python-speed v1.1")
 with open("test_file") as file:
     
     total=0
@@ -153,25 +153,23 @@ with open("test_file") as file:
     
     
     start_time = timer()
-    strb(data)
+    for i in range(3):
+     strb(data)
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('string:',str(elapsed_time * 1e3))
+    print('string/mem:',str(elapsed_time * 1e3))
     
     
     start_time = timer()
-    pi(9000)
+    pi(9500)
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('pi calc:',str(elapsed_time * 1e3))
+    print('pi calc/math:',str(elapsed_time * 1e3))
     
 
     
     start_time = timer()
-    
-    
     for i in range(0, 120):
-#        data=data.lower()
         # Email
         f=measure(data, '[\w\.+-]+@[\w\.-]+\.[\w\.-]+', i)
 
@@ -190,6 +188,6 @@ with open("test_file") as file:
     fib(35)
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('fibonnaci generate: ', str(elapsed_time * 1e3))
+    print('fibonnaci/stack: ', str(elapsed_time * 1e3))
     
     print('\ntotal: ', str(total * 1e3), "(lower is better)")
