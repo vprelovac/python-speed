@@ -47,7 +47,7 @@ total:  11252.856145147234
 
 ```
 
-Use it to measure performance of different hosting providers.
+Use python-speed to benchmark different hosting providers.
 
 DigitalOcean $6/mo AMD
 ```
