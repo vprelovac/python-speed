@@ -9,7 +9,7 @@ cd python-speed
 python3 bench.py
 ```
 
-Lower values are better.
+The output is time needed to do different tests (in ms). Lower values are better.
 
 ## Example: hosting showdown
 
