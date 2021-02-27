@@ -73,41 +73,54 @@ total:  8879.383453000031
 ```
 
 
-## Example: Measure different python versions
+## Example: Measure performance of different python versions
 
-Use python-speed to measure Python 3.8 vs Python 3.7 vs pypy performance.
+Use python-speed to measure Python 2.7 vs Python 3.7 vs Python 3.8 vs pypy performance.
 
 
 ```
+python2 bench.py 
+
+python-speed v1.1 using python 2.7.18
+('string/mem:', '1331.3', 'ms')
+('pi calc/math:', '2823.0', 'ms')
+('regex:', '1895.65', 'ms')
+('fibonnaci/stack: ', '2283.49', 'ms')
+('\ntotal: ', '8333.43', 'ms (lower is better)')
+
+
 python3.7 bench.py 
 
-string: 2670.0545439962298
-pi calc: 2536.7995460983366
-regex: 3206.1590410303324
-fibonnaci generate:  2416.4477509912103
+python-speed v1.1 using python 3.7.0
+string/mem: 3234.91 ms
+pi calc/math: 2750.48 ms
+regex: 3383.7 ms
+fibonnaci/stack:  2434.09 ms
 
-total:  10829.46088211611
+total:  11803.17 ms (lower is better)
+
 
 
 python3.8 bench.py 
 
-string: 2533.86879095342
-pi calc: 2524.6768220094964
-regex: 2537.656887085177
-fibonnaci generate:  2285.8045920729637
+python-speed v1.1 using python 3.8.5
+string/mem: 3173.93 ms
+pi calc/math: 2728.48 ms
+regex: 2764.86 ms
+fibonnaci/stack:  2320.35 ms
 
-total:  9882.007092121057
+total:  10987.62 ms (lower is better)
 
+pypy bench.py 
 
-pypy3.7 bench.py
+python-speed v1.1 using python 3.7.9
+string/mem: 4056.55 ms
+pi calc/math: 3164.39 ms
+regex: 1953.89 ms
+fibonnaci/stack:  142.2 ms
 
-string: 6090.247004991397
-pi calc: 2811.791994026862
-regex: 2218.3589100604877
-fibonnaci generate:  132.45823606848717
-
-total:  11252.856145147234
+total:  9317.03 ms (lower is better)
 
 ```
 
-Python 3.8 is about 10% faster than 3.7. pypy is immensely faster working with stack but has slower string performance than vanilla Python.
+We see interesting evolution of Python. Python 2.7 is still fastest overall thanks to superior string/regex performance. Python 3.8 is about 10% faster than 3.7. Pypy is immensely faster working with stack but has slower string performance than vanilla Python.
