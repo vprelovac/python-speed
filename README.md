@@ -1,5 +1,5 @@
 # python-speed
-Simple but effective Python benchmark. Consisting of four different benchmarks: string/memory, pi calc/math, regex and fibonacci/stack to measure overall performance. You can use it to measure speed of various Python versions, or to measure speed of various hosting providers. It is curious how some providers will have good CPU but bad memory throughput.
+Simple but effective Python benchmark. Consisting of four different benchmarks: string/memory, pi calc/math, regex and fibonacci/stack to measure overall CPU/memory performance. You can use it to measure speed of various Python versions, or to measure speed of various hosting providers. It is curious how some providers will have good CPU but bad memory throughput.
 
 ## Usage
 
