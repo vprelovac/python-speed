@@ -157,14 +157,14 @@ with open("test_file") as file:
      strb(data)
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('string/mem:',str(elapsed_time * 1e3))
+    print('string/mem:', str(round(elapsed_time * 1e3, 2)), 'ms')
     
     
     start_time = timer()
-    pi(9500)
+    pi(9300)
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('pi calc/math:',str(elapsed_time * 1e3))
+    print('pi calc/math:',str(round(elapsed_time * 1e3, 2)), 'ms')
     
 
     
@@ -181,13 +181,13 @@ with open("test_file") as file:
     
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('regex:',str(elapsed_time * 1e3))
+    print('regex:',str(round(elapsed_time * 1e3, 2)), 'ms')
     
 
     start_time = timer()	
     fib(35)
     elapsed_time = timer() - start_time
     total+=elapsed_time
-    print('fibonnaci/stack: ', str(elapsed_time * 1e3))
+    print('fibonnaci/stack: ',str(round(elapsed_time * 1e3, 2)), 'ms')
     
-    print('\ntotal: ', str(total * 1e3), "(lower is better)")
+    print('\ntotal: ', str(round(total * 1e3, 2)), 'ms (lower is better)')
