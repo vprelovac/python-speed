@@ -127,7 +127,7 @@ def strb(data):
          temp='|'.join(data.split(' '))
          
 
-print("python-speed v1.1")
+print("python-speed v1.1 using python %d.%d" %(sys.version_info[0],sys.version_info[1]))
 with open("test_file") as file:
     
     total=0
