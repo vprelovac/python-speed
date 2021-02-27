@@ -192,4 +192,4 @@ with open("test_file") as file:
     total+=elapsed_time
     print('fibonnaci generate: ', str(elapsed_time * 1e3))
     
-    print('\ntotal: ', str(total * 1e3))
+    print('\ntotal: ', str(total * 1e3), "(lower is better)")
