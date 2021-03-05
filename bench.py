@@ -114,20 +114,46 @@ def reverse_1(s):
         reversed_output = c + reversed_output
     return reversed_output
 
+def reverse_recursion(s):
+    if len(s) == 0:
+        return s
+    else:
+        return reverse_recursion(s[1:]) + s[0]
+        
 def reverse_5(s):
     return s[::-1]
         
 def strb(data):
      for i in range(0, 130):
          temp=data.lower()
-         temp=temp.replace("is", "was")
-         temp=reverse_1(data[1000:14250])
-         temp=reverse_5(temp)
-
+         temp=data.replace("is", "was").replace("1","2")
+         temp=reverse_1(data[1000:13250])
+         temp=reverse_recursion(reverse_recursion(data[1000:1800]))
+         temp=reverse_5(data)
          temp='|'.join(data.split(' '))
          
+def mat():
+ X = [[12,7,3],
+    [4 ,5,6],
+    [7 ,8,9]]
+    # 3x4 matrix
+ Y = [[5,8,1,2],
+    [6,7,3,0],
+    [4,5,9,1]]
+ result = [[0,0,0,0],
+         [0,0,0,0],
+         [0,0,0,0]]
+ for x in range(10000):        
+  for i in range(len(X)):
+   # iterate through columns of Y
+   for j in range(len(Y[0])):
+       # iterate through rows of Y
+       for k in range(len(Y)):
+           result[i][j] += X[i][k] * Y[k][j]
+   result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]          
+ return result                  
 
-print("python-speed v1.1 using python v%d.%d.%d" %(sys.version_info[0],sys.version_info[1],sys.version_info[2]))
+print("python-speed v1.2 using python v%d.%d.%d" %(sys.version_info[0],sys.version_info[1],sys.version_info[2]))
 with open("test_file") as file:
     
     total=0
@@ -161,7 +187,8 @@ with open("test_file") as file:
     
     
     start_time = timer()
-    pi(9300)
+    pi(9000)
+    mat()
     elapsed_time = timer() - start_time
     total+=elapsed_time
     print('pi calc/math:',str(round(elapsed_time * 1e3, 2)), 'ms')
@@ -169,7 +196,7 @@ with open("test_file") as file:
 
     
     start_time = timer()
-    for i in range(0, 120):
+    for i in range(0, 125):
         # Email
         f=measure(data, '[\w\.+-]+@[\w\.-]+\.[\w\.-]+', i)
 
@@ -178,6 +205,8 @@ with open("test_file") as file:
 
         # IP
         h=measure(data, '(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])', i)
+        
+        d=measure(data, '^(?:[^cfdrp].*|.[^a].*|..[^n].*|.{4,}|.{0,2})$',i)
     
     elapsed_time = timer() - start_time
     total+=elapsed_time
@@ -185,7 +214,8 @@ with open("test_file") as file:
     
 
     start_time = timer()	
-    fib(35)
+    fib(34)
+    fib(32)
     elapsed_time = timer() - start_time
     total+=elapsed_time
     print('fibonnaci/stack: ',str(round(elapsed_time * 1e3, 2)), 'ms')
