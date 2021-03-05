@@ -1,5 +1,5 @@
 # python-speed
-Simple but effective Python benchmark. python-speed uses four different benchmarks: string/memory, pi calc/math, regex and fibonacci/stack to measure overall CPU/memory performance. The test will test the performance of a single CPU.
+Simple but effective Python benchmark. python-speed uses four different benchmarks: string/memory, pi calc/math, regex and fibonacci/stack to give the full picture about CPU/memory performance. python-speed tests the performance of a single CPU.
 
 You can use it to measure speed of various Python versions, or to measure speed of various hosting providers. It may uncover weak links - some providers having good CPU but bad memory throughput.
 
