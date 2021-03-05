@@ -124,3 +124,5 @@ total:  9317.03 ms (lower is better)
 ```
 
 We see interesting evolution of Python. Python 2.7 is still fastest overall thanks to superior string/regex performance. Python 3.8 is about 10% faster than 3.7. Pypy is immensely faster working with stack but has slower string performance than vanilla Python.
+
+Edit 03/04/2021: Pypy maintainer responded to the benchmark, and patched pypy. As a result, the latest pypy nightly has better string performance.
