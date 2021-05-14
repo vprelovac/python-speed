@@ -133,7 +133,7 @@ Edit 03/04/2021: Pypy maintainer responded to the benchmark, and patched pypy. A
 
 I use and enjoy Python language extensively. One of the most commonly cited issues with Python is speed since it's an interpreted language. 
 
-Luckily there are couple of ways to improve python programs. These come in many flavors and I am going to benchmark three of them [Nuitka](https://nuitka.net), [Pyston](https://www.pyston.org) and [pypy](https://www.pypy.org)
+Luckily there are couple of simple ways to improve the performance python programs. These come in many flavors and I am going to benchmark three of them [Nuitka](https://nuitka.net), [Pyston](https://www.pyston.org) and [pypy](https://www.pypy.org)
 
 Python3 baseline
 ```
