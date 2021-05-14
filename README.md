@@ -1,7 +1,7 @@
 # python-speed
-Simple but effective Python benchmark. python-speed uses four different benchmarks: string/memory, pi calc/math, regex and fibonacci/stack to give the full picture about CPU/memory performance. python-speed tests the performance of a single CPU.
+Simple but effective Python benchmark. python-speed uses four different benchmarks: string/memory, pi calc/math, regex and fibonacci/stack to give the full picture about CPU/memory performance. python-speed tests the performance of a single CPU. The benchmarks are written in a way to measure the performance of the interpreter.
 
-You can use it to measure speed of various Python versions, or to measure speed of various hosting providers. It may uncover weak links - some providers having good CPU but bad memory throughput.
+You can use it to measure speed of various Python versions, compilers/interpreters or to measure speed of various hosting providers. 
 
 ## Usage
 
@@ -17,6 +17,8 @@ The output will be time needed to do different tests (in ms). Lower values are b
 
 
 Using python-speed to benchmark different hosting providers. All instances running Ubuntu 20.04 LTS and python 3.8 was default. 
+
+The benchmark did uncover weak links - some providers having good CPU but bad memory throughput.
 
 DigitalOcean $6/mo AMD
 ```
