@@ -184,3 +184,13 @@ total:  6572.72 ms (lower is better)
 Here both Nuitka and pyston deliver about 15% performance improvements for free.  Nuitka produces a binary after a compilation process. Pyston is interesting as it has its own module manager and is somewhat easier to manage for more complext projects. 
 
 pypy looks most promising with 30% overall improvement, thanks mostly to stellar handling of stack and also great regex optimizations.
+
+For fun, here is what the ultimate performance combination would look like. String/memory handling from Pyston, math from Nuitka, regex and stack from pypy for a total of 35% improvement over baseline Python3.
+```
+string/mem: 1872.94 ms (Pyston)
+pi calc/math: 2280.58 ms (Nuitka)
+regex: 1725.2 ms (pypy)
+fibonnaci/stack:  95.68 ms (pypy)
+
+total: 6000 ms (lower is better)
+```
