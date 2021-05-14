@@ -13,7 +13,7 @@ python3 bench.py
 
 The output will be time needed to do different tests (in ms). Lower values are better.
 
-## Example: hosting showdown
+## Example: Hosting showdown<a name="hosting"></a>
 
 
 Using python-speed to benchmark different hosting providers. All instances running Ubuntu 20.04 LTS and python 3.8 was default. 
