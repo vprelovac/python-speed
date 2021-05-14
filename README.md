@@ -128,3 +128,59 @@ total:  9317.03 ms (lower is better)
 We see interesting evolution of Python. Python 2.7 is still fastest overall thanks to superior string/regex performance. Python 3.8 is about 10% faster than 3.7. Pypy is immensely faster working with stack but has slower string performance than vanilla Python.
 
 Edit 03/04/2021: Pypy maintainer responded to the benchmark, and patched pypy. As a result, the latest pypy nightly has better string performance.
+
+## Example: Python interpreter/compiler showdown<a name="compiler"></a>
+
+I use and enjoy Python language extensively. One of the most commonly cited issues with Python is speed since it's an interpreted language. 
+
+Luckily there are couple of ways to improve python programs. These come in many flavors and I am going to benchmark three of them [Nuitka](https://nuitka.net), [Pyston](https://www.pyston.org) and [pypy](https://www.pypy.org)
+
+Python3 baseline
+```
+python-speed v1.2 using python v3.9.4
+string/mem: 2056.13 ms
+pi calc/math: 2466.41 ms
+regex: 2334.58 ms
+fibonnaci/stack:  2416.79 ms
+
+total:  9273.92 ms (lower is better)
+```
+
+Pyston
+```
+python-speed v1.2 using python v3.8.8
+string/mem: 1872.94 ms
+pi calc/math: 2366.56 ms
+regex: 2452.3 ms
+fibonnaci/stack:  1235.13 ms
+
+total:  7926.93 ms (lower is better)
+```
+
+
+Nuitka
+```
+python-speed v1.2 using python v3.9.4
+string/mem: 1953.93 ms
+pi calc/math: 2280.58 ms
+regex: 2407.34 ms
+fibonnaci/stack:  1199.3 ms
+
+total:  7841.15 ms (lower is better)
+```
+
+pypy
+```
+./pypy3.7-v7.3.4-linux64/bin/pypy3.7 bench.py (pypy)
+python-speed v1.2 using python v3.7.10
+string/mem: 2309.0 ms
+pi calc/math: 2442.84 ms
+regex: 1725.2 ms
+fibonnaci/stack:  95.68 ms
+
+total:  6572.72 ms (lower is better)
+```
+
+Here both Nuitka and pyston deliver about 15% performance improvements for free.  Nuitka produces a binary after a compilation process. Pyston is interesting as it has its own module manager and is somewhat easier to manage for more complext projects. 
+
+pypy looks most promising with 30% overall improvement, thanks mostly to stellar handling of stack and also great regex optimizations.
