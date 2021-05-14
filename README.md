@@ -181,7 +181,7 @@ fibonnaci/stack:  95.68 ms
 total:  6572.72 ms (lower is better)
 ```
 
-Here both Nuitka and pyston deliver about 15% performance improvements for free.  Nuitka produces a binary after a compilation process. Pyston is interesting as it has its own module manager and is somewhat easier to manage for more complext projects. 
+Both Nuitka and pyston deliver about 15% performance improvements for "free".  Nuitka produces a binary after a compilation process. Pyston is interesting as it has its own module manager and is somewhat easier to use for more complex projects. 
 
 pypy looks most promising with 30% overall improvement, thanks mostly to stellar handling of stack and also great regex optimizations.
 
