@@ -26,7 +26,7 @@ pi calc: 2586.3461019998795
 regex: 2393.028546000096
 fibonnaci generate:  2007.9667189997963
 
-total:  12188.32380799995
+total:  12188.32 ms (lower is better)
 ```
 
 DigitalOcean $6/mo Intel
@@ -37,7 +37,7 @@ pi calc: 2780.3279120003026
 regex: 2951.313669999763
 fibonnaci generate:  2506.3611700002184
 
-total:  19794.849659000647
+total:  19794.84 ms (lower is better)
 ```
 
 DigitalOcean $5/mo
@@ -48,7 +48,7 @@ pi calc: 3260.851814000034
 regex: 3409.4889729999522
 fibonnaci generate:  2955.1533290000407
 
-total:  22771.476752000126
+total:  22771.47 ms (lower is better)
 ```
 
 
@@ -60,7 +60,7 @@ pi calc: 3530.859902000003
 regex: 4446.7015299999985
 fibonnaci generate:  4629.420477000011
 
-total:  16048.869835000005
+total:  16048.86 ms (lower is better)
 ```
 
 UpCloud $5/mo
@@ -71,7 +71,7 @@ pi calc: 2604.472407000003
 regex: 2679.8153320000038
 fibonnaci generate:  2099.722478000018
 
-total:  8879.383453000031
+total:  8879.38 ms (lower is better)
 ```
 
 
