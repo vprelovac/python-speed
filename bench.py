@@ -1,6 +1,11 @@
 import sys
 import re
 from timeit import default_timer as timer
+from itertools import repeat
+from math import sqrt
+from multiprocessing import Pool
+
+
 #import pandas as pd
 #import numpy as np
 
@@ -153,8 +158,51 @@ def mat():
    result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]          
  return result                  
 
-print("python-speed v1.2 using python v%d.%d.%d" %(sys.version_info[0],sys.version_info[1],sys.version_info[2]))
-with open("test_file") as file:
+def eval_A(i, j):
+    ij = i + j
+    return ij * (ij + 1) // 2 + i + 1
+
+
+def A_sum(u, i):
+    return sum(u_j / eval_A(i, j) for j, u_j in enumerate(u))
+
+
+def At_sum(u, i):
+    return sum(u_j / eval_A(j, i) for j, u_j in enumerate(u))
+
+
+def multiply_AtAv(u):
+    r = range(len(u))
+
+    tmp = pool.starmap(
+        A_sum,
+        zip(repeat(u), r)
+    )
+    return pool.starmap(
+        At_sum,
+        zip(repeat(tmp), r)
+    )
+    
+    
+def mp_test():
+    n = int(900)
+    u = [1] * n
+
+    for _ in range(10):
+        v = multiply_AtAv(u)
+        u = multiply_AtAv(v)
+
+    vBv = vv = 0
+
+    for ue, ve in zip(u, v):
+        vBv += ue * ve
+        vv  += ve * ve
+
+    result = sqrt(vBv/vv)
+
+if __name__ == '__main__':       
+  print("python-speed v1.3 using python v%d.%d.%d" %(sys.version_info[0],sys.version_info[1],sys.version_info[2]))
+  with open("test_file") as file:
     
     total=0
     data = file.read()
@@ -219,5 +267,14 @@ with open("test_file") as file:
     elapsed_time = timer() - start_time
     total+=elapsed_time
     print('fibonnaci/stack: ',str(round(elapsed_time * 1e3, 2)), 'ms')
+    
+    start_time = timer()
+    with Pool(processes=4) as pool:
+        mp_test()
+    elapsed_time = timer() - start_time
+    total+=elapsed_time
+    print('multiprocess:', str(round(elapsed_time * 1e3, 2)), 'ms')
+    
+    
     
     print('\ntotal: ', str(round(total * 1e3, 2)), 'ms (lower is better)')
