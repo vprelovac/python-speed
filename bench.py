@@ -185,7 +185,7 @@ def multiply_AtAv(u):
     
     
 def mp_test():
-    n = int(500)
+    n = int(432)
     u = [1] * n
 
     for _ in range(10):
@@ -269,7 +269,7 @@ if __name__ == '__main__':
     print('fibonnaci/stack: ',str(round(elapsed_time * 1e3, 2)), 'ms')
     
     start_time = timer()
-    with Pool(processes=4) as pool:
+    with Pool(processes=64) as pool:
         mp_test()
     elapsed_time = timer() - start_time
     total+=elapsed_time
