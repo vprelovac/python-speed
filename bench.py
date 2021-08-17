@@ -185,7 +185,7 @@ def multiply_AtAv(u):
     
     
 def mp_test():
-    n = int(900)
+    n = int(500)
     u = [1] * n
 
     for _ in range(10):
