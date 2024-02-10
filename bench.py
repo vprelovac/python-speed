@@ -184,8 +184,7 @@ def multiply_AtAv(u):
     )
     
     
-def mp_test():
-    n = int(432)
+def mp_test(n):
     u = [1] * n
 
     for _ in range(10):
@@ -206,7 +205,7 @@ if __name__ == '__main__':
     
     total=0
     data = file.read()
-
+    factor=1.0
 #    start_time = timer()
 #    for i in range(0,70):
 #     numb()
@@ -235,7 +234,7 @@ if __name__ == '__main__':
     
     
     start_time = timer()
-    pi(9000)
+    pi(int(factor)*9000)
     mat()
     elapsed_time = timer() - start_time
     total+=elapsed_time
@@ -244,16 +243,10 @@ if __name__ == '__main__':
 
     
     start_time = timer()
-    for i in range(0, 125):
-        # Email
-        f=measure(data, '[\w\.+-]+@[\w\.-]+\.[\w\.-]+', i)
-
-        # URI
-        g=measure(data, '[\w]+://[^/\s?#]+[^\s?#]+(?:\?[^\s#]*)?(?:#[^\s]*)?', i)
-
-        # IP
-        h=measure(data, '(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])', i)
-        
+    for i in range(0, int(factor*125)):
+        f=measure(data, r'[\w\.+-]+@[\w\.-]+\.[\w\.-]+', i)
+        g=measure(data, r'[\w]+://[^/\s?#]+[^\s?#]+(?:\?[^\s#]*)?(?:#[^\s]*)?', i)
+        h=measure(data, r'(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])', i)       
         d=measure(data, '^(?:[^cfdrp].*|.[^a].*|..[^n].*|.{4,}|.{0,2})$',i)
     
     elapsed_time = timer() - start_time
@@ -262,15 +255,15 @@ if __name__ == '__main__':
     
 
     start_time = timer()	
-    fib(34)
-    fib(32)
+    fib(int(factor*34))
+    fib(int(factor*32))
     elapsed_time = timer() - start_time
     total+=elapsed_time
     print('fibonnaci/stack: ',str(round(elapsed_time * 1e3, 2)), 'ms')
     
     start_time = timer()
-    with Pool(processes=64) as pool:
-        mp_test()
+    with Pool(processes=4) as pool:
+        mp_test(int(factor*432))
     elapsed_time = timer() - start_time
     total+=elapsed_time
     print('multiprocess:', str(round(elapsed_time * 1e3, 2)), 'ms')
